@@ -19,61 +19,63 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.jsx";
 
 const dashboardRoutes = [
   {
-    path: "/dashboard",
-    sidebarName: "Dashboard",
-    navbarName: "Material Dashboard",
+    path: "/dashboard", //자판기매출 = dashboard
+    sidebarName: "자판기 매출",
+    navbarName: "자판기 매출",
     icon: Dashboard,
     component: DashboardPage
   },
-  {
-    path: "/user",
-    sidebarName: "User Profile",
-    navbarName: "Profile",
-    icon: Person,
-    component: UserProfile
-  },
+ 
   {
     path: "/table",
-    sidebarName: "Table List",
-    navbarName: "Table List",
+    sidebarName: "자판기 리스트",
+    navbarName: "자판기 리스트",
     icon: "content_paste",
     component: TableList
   },
   {
-    path: "/typography",
-    sidebarName: "Typography",
-    navbarName: "Typography",
-    icon: LibraryBooks,
-    component: Typography
-  },
-  {
     path: "/icons",
-    sidebarName: "Icons",
-    navbarName: "Icons",
+    sidebarName: "원격 제어",
+    navbarName: "원격 제어",
     icon: BubbleChart,
     component: Icons
   },
   {
     path: "/maps",
-    sidebarName: "Maps",
-    navbarName: "Map",
+    sidebarName: "기기 위치",
+    navbarName: "기기 위치",
     icon: LocationOn,
     component: Maps
   },
   {
+    path: "/user",
+    sidebarName: "관리자 정보",
+    navbarName: "관리자 정보",
+    icon: Person,
+    component: UserProfile
+  },
+  
+  {
+    path: "/typography",
+    sidebarName: "개발자 도구1",
+    navbarName: "개발자 도구1",
+    icon: LibraryBooks,
+    component: Typography
+  },
+  {
     path: "/notifications",
-    sidebarName: "Notifications",
-    navbarName: "Notifications",
+    sidebarName: "개발자 도구2",
+    navbarName: "개발자 도구2",
     icon: Notifications,
     component: NotificationsPage
   },
-  {
+  /*{
     path: "/upgrade-to-pro",
     sidebarName: "Upgrade To PRO",
     navbarName: "Upgrade To PRO",
     icon: Unarchive,
     component: UpgradeToPro
-  },
+  },*/
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];
 
