@@ -41,8 +41,8 @@ class HeaderLinks extends React.Component {
     const { open } = this.state;
     return (
       <div>
-        <div className={classes.searchWrapper}>
-          <CustomInput
+        {/*<div className={classes.searchWrapper}>
+         <CustomInput
             formControlProps={{
               className: classes.margin + " " + classes.search
             }}
@@ -52,7 +52,8 @@ class HeaderLinks extends React.Component {
                 "aria-label": "Search"
               }
             }}
-          />
+          />  
+          
           <Button color="white" aria-label="edit" justIcon round>
             <Search />
           </Button>
@@ -69,6 +70,7 @@ class HeaderLinks extends React.Component {
             <p className={classes.linkText}>Dashboard</p>
           </Hidden>
         </Button>
+        */}
         <div className={classes.manager}>
           <Button
             buttonRef={node => {
@@ -83,10 +85,10 @@ class HeaderLinks extends React.Component {
             className={classes.buttonLink}
           >
             <Notifications className={classes.icons} />
-            <span className={classes.notifications}>5</span>
+            <span className={classes.notifications}>3</span>
             <Hidden mdUp implementation="css">
               <p onClick={this.handleClick} className={classes.linkText}>
-                Notification
+                새로운 알림
               </p>
             </Hidden>
           </Button>
@@ -117,31 +119,19 @@ class HeaderLinks extends React.Component {
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        Mike John responded to your email
+                        3번 기기 고장
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        You have 5 new tasks
+                        지정 매출액 돌파
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        You're now friend with Andrew
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        Another Notification
-                      </MenuItem>
-                      <MenuItem
-                        onClick={this.handleClose}
-                        className={classes.dropdownItem}
-                      >
-                        Another One
+                        .....
                       </MenuItem>
                     </MenuList>
                   </ClickAwayListener>
@@ -159,7 +149,7 @@ class HeaderLinks extends React.Component {
         >
           <Person className={classes.icons} />
           <Hidden mdUp implementation="css">
-            <p className={classes.linkText}>Profile</p>
+            <p className={classes.linkText}>계정</p>
           </Hidden>
         </Button>
       </div>

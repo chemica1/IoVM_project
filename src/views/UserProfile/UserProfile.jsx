@@ -157,16 +157,14 @@ function UserProfile(props) {
               </a>
             </CardAvatar>
             <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO / CO-FOUNDER</h6>
+              <h6 className={classes.cardCategory}>CEO</h6>
               <h4 className={classes.cardTitle}>Alec Thompson</h4>
               <p className={classes.description}>
-                Don't be scared of the truth because we need to restart the
-                human foundation in truth And I love you like Kanye loves Kanye
-                I love Rick Owens’ bed design but the back is...
+                말도 안 되는 풀스택을 요구하는 사장. 웹개발에 대한 개념이 전무하여 의사소통이 불가능하다. 그의 어록 "간단하게 쇼핑몰같은 거 만들면 돼"을 보면 웹서비스가 쉽게 만들어지는 줄 안다.
               </p>
-              <Button color="primary" round>
+              {/*<Button color="primary" round>
                 Follow
-              </Button>
+                  </Button>*/}
             </CardBody>
           </Card>
         </GridItem>

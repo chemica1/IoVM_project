@@ -25,47 +25,45 @@ const dashboardRoutes = [
     icon: Dashboard,
     component: DashboardPage
   },
- 
   {
     path: "/table",
-    sidebarName: "자판기 리스트",
-    navbarName: "자판기 리스트",
+    sidebarName: "자판기 리스트(구현중)",
+    navbarName: "자판기 리스트(구현중)",
     icon: "content_paste",
     component: TableList
   },
   {
     path: "/icons",
-    sidebarName: "원격 제어",
-    navbarName: "원격 제어",
+    sidebarName: "원격 제어(구현중)",
+    navbarName: "원격 제어(구현중)",
     icon: BubbleChart,
     component: Icons
   },
   {
     path: "/maps",
-    sidebarName: "기기 위치",
-    navbarName: "기기 위치",
+    sidebarName: "기기 위치(구현중)",
+    navbarName: "기기 위치(구현중)",
     icon: LocationOn,
     component: Maps
   },
   {
     path: "/user",
-    sidebarName: "관리자 정보",
-    navbarName: "관리자 정보",
+    sidebarName: "관리자 정보(구현중)",
+    navbarName: "관리자 정보(구현중)",
     icon: Person,
     component: UserProfile
   },
-  
   {
     path: "/typography",
-    sidebarName: "개발자 도구1",
-    navbarName: "개발자 도구1",
+    sidebarName: "참조 도구1",
+    navbarName: "참조 도구1",
     icon: LibraryBooks,
     component: Typography
   },
   {
     path: "/notifications",
-    sidebarName: "개발자 도구2",
-    navbarName: "개발자 도구2",
+    sidebarName: "참조 도구2",
+    navbarName: "참조 도구2",
     icon: Notifications,
     component: NotificationsPage
   },

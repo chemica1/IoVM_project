@@ -64,7 +64,7 @@ class Dashboard extends React.Component {
                 </CardIcon>
                 <p className={classes.cardCategory}>관리 개수</p>
                 <h3 className={classes.cardTitle}>
-                  49/255 <small>개</small>
+                  4 <small>대</small>
                 </h3>
               </CardHeader>
               <CardFooter stats>
@@ -147,7 +147,7 @@ class Dashboard extends React.Component {
               <CardBody>
                 <h4 className={classes.cardTitle}>하루 매출 추이(구현중)</h4>
                 <p className={classes.cardCategory}>
-                  .....
+                    .....
                 </p>
               </CardBody>
               <CardFooter chart>
