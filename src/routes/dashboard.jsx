@@ -20,8 +20,8 @@ import UpgradeToPro from "views/UpgradeToPro/UpgradeToPro.jsx";
 const dashboardRoutes = [
   {
     path: "/dashboard", //자판기매출 = dashboard
-    sidebarName: "자판기 매출",
-    navbarName: "자판기 매출",
+    sidebarName: "매출현황",
+    navbarName: "매출현황",
     icon: Dashboard,
     component: DashboardPage
   },

@@ -62,18 +62,19 @@ class Dashboard extends React.Component {
                 <CardIcon color="warning">
                   <Icon>content_copy</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Used Space</p>
+                <p className={classes.cardCategory}>관리 개수</p>
                 <h3 className={classes.cardTitle}>
-                  49/50 <small>GB</small>
+                  49/255 <small>개</small>
                 </h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <Danger>
-                    <Warning />
-                  </Danger>
+                  {/*<Danger>
+                   <Warning />
+                  </Danger>*/}
+                  <LocalOffer />
                   <a href="#pablo" onClick={e => e.preventDefault()}>
-                    Get more space
+                    ...
                   </a>
                 </div>
               </CardFooter>
@@ -85,13 +86,13 @@ class Dashboard extends React.Component {
                 <CardIcon color="success">
                   <Store />
                 </CardIcon>
-                <p className={classes.cardCategory}>Revenue</p>
-                <h3 className={classes.cardTitle}>$34,245</h3>
+                <p className={classes.cardCategory}>오늘 매출</p>
+                <h3 className={classes.cardTitle}>34,000원</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <DateRange />
-                  Last 24 Hours
+                  <Update />
+                  매일 자정 갱신
                 </div>
               </CardFooter>
             </Card>
@@ -102,13 +103,13 @@ class Dashboard extends React.Component {
                 <CardIcon color="danger">
                   <Icon>info_outline</Icon>
                 </CardIcon>
-                <p className={classes.cardCategory}>Fixed Issues</p>
-                <h3 className={classes.cardTitle}>75</h3>
+                <p className={classes.cardCategory}>이번주 매출</p>
+                <h3 className={classes.cardTitle}>573,200원</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <LocalOffer />
-                  Tracked from Github
+                  <DateRange />
+                  매주 일요일 갱신
                 </div>
               </CardFooter>
             </Card>
@@ -119,19 +120,43 @@ class Dashboard extends React.Component {
                 <CardIcon color="info">
                   <Accessibility />
                 </CardIcon>
-                <p className={classes.cardCategory}>Followers</p>
-                <h3 className={classes.cardTitle}>+245</h3>
+                <p className={classes.cardCategory}>이번달 매출</p>
+                <h3 className={classes.cardTitle}>682,500원</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  <Update />
-                  Just Updated
+                  <DateRange />
+                  매달 1일 ~ 현재
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>
         <GridContainer>
+          <GridItem xs={12} sm={12} md={4}>
+            <Card chart>
+              <CardHeader color="danger">
+                <ChartistGraph
+                  className="ct-chart"
+                  data={completedTasksChart.data}
+                  type="Line"
+                  options={completedTasksChart.options}
+                  listener={completedTasksChart.animation}
+                />
+              </CardHeader>
+              <CardBody>
+                <h4 className={classes.cardTitle}>하루 매출 추이(구현중)</h4>
+                <p className={classes.cardCategory}>
+                  .....
+                </p>
+              </CardBody>
+              <CardFooter chart>
+                <div className={classes.stats}>
+                  <AccessTime /> ......
+                </div>
+              </CardFooter>
+            </Card>
+          </GridItem>
           <GridItem xs={12} sm={12} md={4}>
             <Card chart>
               <CardHeader color="success">
@@ -144,7 +169,7 @@ class Dashboard extends React.Component {
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Daily Sales</h4>
+                <h4 className={classes.cardTitle}>주 매출 추이(구현중)</h4>
                 <p className={classes.cardCategory}>
                   <span className={classes.successText}>
                     <ArrowUpward className={classes.upArrowCardCategory} /> 55%
@@ -172,45 +197,21 @@ class Dashboard extends React.Component {
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>Email Subscriptions</h4>
+                <h4 className={classes.cardTitle}>월 매출 추이(구현중)</h4>
                 <p className={classes.cardCategory}>
-                  Last Campaign Performance
+                  ......
                 </p>
               </CardBody>
               <CardFooter chart>
                 <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
-                </div>
-              </CardFooter>
-            </Card>
-          </GridItem>
-          <GridItem xs={12} sm={12} md={4}>
-            <Card chart>
-              <CardHeader color="danger">
-                <ChartistGraph
-                  className="ct-chart"
-                  data={completedTasksChart.data}
-                  type="Line"
-                  options={completedTasksChart.options}
-                  listener={completedTasksChart.animation}
-                />
-              </CardHeader>
-              <CardBody>
-                <h4 className={classes.cardTitle}>Completed Tasks</h4>
-                <p className={classes.cardCategory}>
-                  Last Campaign Performance
-                </p>
-              </CardBody>
-              <CardFooter chart>
-                <div className={classes.stats}>
-                  <AccessTime /> campaign sent 2 days ago
+                  <AccessTime /> .....
                 </div>
               </CardFooter>
             </Card>
           </GridItem>
         </GridContainer>
         <GridContainer>
-          <GridItem xs={12} sm={12} md={6}>
+          {/*} <GridItem xs={12} sm={12} md={6}>
             <CustomTabs
               title="Tasks:"
               headerColor="primary"
@@ -250,11 +251,11 @@ class Dashboard extends React.Component {
                 }
               ]}
             />
-          </GridItem>
+            </GridItem>*/}
           <GridItem xs={12} sm={12} md={6}>
             <Card>
               <CardHeader color="warning">
-                <h4 className={classes.cardTitleWhite}>매출 순위</h4>
+                <h4 className={classes.cardTitleWhite}>순위(구현중)</h4>
                 <p className={classes.cardCategoryWhite}>
                   현재 업데이트 되는...
                 </p>
