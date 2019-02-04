@@ -28,7 +28,10 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardIcon from "components/Card/CardIcon.jsx";
 import CardBody from "components/Card/CardBody.jsx";
-import CardFooter from "components/Card/CardFooter.jsx";
+import CardFooter from "components/Card/CardFooter.jsx"
+;
+import firebase from "firebase";
+import {DB_config} from "config/fbconfig.js"
 
 import { bugs, website, server } from "variables/general.jsx";
 
@@ -41,9 +44,40 @@ import {
 import dashboardStyle from "assets/jss/material-dashboard-react/views/dashboardStyle.jsx";
 
 class Dashboard extends React.Component {
+  constructor(props){
+    super(props);
+    this.fbObject = !firebase.apps.length ? firebase.initializeApp(DB_config) : firebase.app();
+    this.dailySale = this.fbObject.database().ref().child('dailySale');
+    this.weeklySale = this.fbObject.database().ref().child('weeklySale');
+    this.monthlySale = this.fbObject.database().ref().child('monthlySale');
+  }
+
+
   state = {
-    value: 0
+    value: 0,
+    dailySale: 0,
+    weeklySale: 0,
+    monthlySale: 0
   };
+
+  componentDidMount(){
+    this.dailySale.on('value', snap =>{
+      this.setState({
+        dailySale: snap.val().toLocaleString()
+      });
+    });
+    this.weeklySale.on('value', snap =>{
+      this.setState({
+        weeklySale: snap.val().toLocaleString()
+      });
+    });
+    this.monthlySale.on('value', snap =>{
+      this.setState({
+        monthlySale: snap.val().toLocaleString()
+      });
+    });
+  }
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -56,7 +90,7 @@ class Dashboard extends React.Component {
     return (
       <div>
         <GridContainer>
-          <GridItem xs={12} sm={6} md={3}>
+         {/* <GridItem xs={12} sm={6} md={3}>
             <Card>
               <CardHeader color="warning" stats icon>
                 <CardIcon color="warning">
@@ -69,9 +103,9 @@ class Dashboard extends React.Component {
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
-                  {/*<Danger>
+                  Danger>
                    <Warning />
-                  </Danger>*/}
+                  </Danger>
                   <LocalOffer />
                   <a href="#pablo" onClick={e => e.preventDefault()}>
                     ...
@@ -79,7 +113,7 @@ class Dashboard extends React.Component {
                 </div>
               </CardFooter>
             </Card>
-          </GridItem>
+                </GridItem> */}
           <GridItem xs={12} sm={6} md={3}>
             <Card>
               <CardHeader color="success" stats icon>
@@ -87,7 +121,7 @@ class Dashboard extends React.Component {
                   <Store />
                 </CardIcon>
                 <p className={classes.cardCategory}>오늘 매출</p>
-                <h3 className={classes.cardTitle}>34,000원</h3>
+                <h3 className={classes.cardTitle}>{this.state.dailySale}원</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
@@ -104,7 +138,7 @@ class Dashboard extends React.Component {
                   <Icon>info_outline</Icon>
                 </CardIcon>
                 <p className={classes.cardCategory}>이번주 매출</p>
-                <h3 className={classes.cardTitle}>573,200원</h3>
+                <h3 className={classes.cardTitle}>{this.state.weeklySale}원</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
@@ -121,7 +155,7 @@ class Dashboard extends React.Component {
                   <Accessibility />
                 </CardIcon>
                 <p className={classes.cardCategory}>이번달 매출</p>
-                <h3 className={classes.cardTitle}>682,500원</h3>
+                <h3 className={classes.cardTitle}>{this.state.monthlySale}원</h3>
               </CardHeader>
               <CardFooter stats>
                 <div className={classes.stats}>
@@ -145,7 +179,7 @@ class Dashboard extends React.Component {
                 />
               </CardHeader>
               <CardBody>
-                <h4 className={classes.cardTitle}>하루 매출 추이(구현중)</h4>
+                <h4 className={classes.cardTitle}>일 매출 추이(구현중)</h4>
                 <p className={classes.cardCategory}>
                     .....
                 </p>
