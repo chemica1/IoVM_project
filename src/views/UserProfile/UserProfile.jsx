@@ -160,7 +160,7 @@ function UserProfile(props) {
               <h6 className={classes.cardCategory}>CEO</h6>
               <h4 className={classes.cardTitle}>김 아무개</h4>
               <p className={classes.description}>
-                말도 안 되는 풀스택을 요구하는 적폐사장. 신기술 공부를 안하려해서 도태되어가는 중이며 웹개발에 대한 개념이 전무하여 의사소통이 불가능하다. 그의 대표적인 망언으로 "간단하게 쇼핑몰같은 거 만들면 되잖아"가 있다.
+                말도 안 되는 풀스택을 요구하는 적폐사장. 웹개발에 대한 기초개념이 전무하여 소통이 불가능하고 신기술 공부를 안하려해서 도태되는 중이다. 그의 대표적인 망언 "간단하게 쇼핑몰같은 거 만들면 되잖아"로 개발자를 암 걸리게 한다.
               </p>
             </CardBody>
           </Card>

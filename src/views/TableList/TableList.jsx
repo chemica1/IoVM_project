@@ -46,9 +46,9 @@ function TableList(props) {
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>기기 리스트</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              관리기기 정보
             </p>
           </CardHeader>
           <CardBody>
@@ -71,10 +71,10 @@ function TableList(props) {
         <Card plain>
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
+              최근 거래 내역
             </h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              인피니티 스크롤 기능 추가예정
             </p>
           </CardHeader>
           <CardBody>

@@ -13,6 +13,11 @@ import Snackbar from "components/Snackbar/Snackbar.jsx";
 import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
+import firebase from "firebase";
+import {DB_config} from "config/fbconfig.js"
+
+
+
 
 const styles = {
   cardCategoryWhite: {
@@ -47,14 +52,32 @@ const styles = {
 class Notifications extends React.Component {
   constructor(props) {
     super(props);
+    this.fbObject = !firebase.apps.length ? firebase.initializeApp(DB_config) : firebase.app();
+    //firebase.initializeApp(DB_config);
+    console.log(this.fbObject.options.databaseURL === DB_config.databaseURL);
+    var asd = firebase.app().name;
+    console.log(asd);
+    this.database = this.fbObject.database().ref().child('speed');
+    
     this.state = {
       tl: false,
       tc: false,
       tr: false,
       bl: false,
       bc: false,
-      br: false
+      br: false,
+      zebal : 11,
     };
+  }
+
+  componentDidMount(){
+    console.log('didmount실행됨');
+    this.database.on('value', snap =>{
+      console.log('변화감지 되냐?ㅡㅡ ');
+      this.setState({
+        zebal : snap.val()
+      });
+    });
   }
   // to stop the warning of calling setState of unmounted component
   componentWillUnmount() {
@@ -75,6 +98,7 @@ class Notifications extends React.Component {
       6000
     );
   }
+
   render() {
     const { classes } = this.props;
     return (
@@ -82,17 +106,7 @@ class Notifications extends React.Component {
         <CardHeader color="primary">
           <h4 className={classes.cardTitleWhite}>Notifications</h4>
           <p className={classes.cardCategoryWhite}>
-            Handcrafted by our friends from{" "}
-            <a target="_blank" href="https://material-ui-next.com/">
-              Material UI
-            </a>{" "}
-            and styled by{" "}
-            <a target="_blank" href="https://www.creative-tim.com/">
-              Creative Tim
-            </a>. Please checkout the{" "}
-            <a href="#pablo" target="_blank">
-              full documentation
-            </a>.
+           메모장{this.state.zebal}
           </p>
         </CardHeader>
         <CardBody>
