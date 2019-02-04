@@ -55,9 +55,11 @@ class Notifications extends React.Component {
     this.fbObject = !firebase.apps.length ? firebase.initializeApp(DB_config) : firebase.app();
     //firebase.initializeApp(DB_config);
     console.log(this.fbObject.options.databaseURL === DB_config.databaseURL);
-    var asd = firebase.app().name;
-    console.log(asd);
+    console.log(this.fbObject);
+    console.log('firebase.app() 하거나 initialize 하면 fbObject에 객체가 옴');
+
     this.database = this.fbObject.database().ref().child('speed');
+    console.log(this.database)
     
     this.state = {
       tl: false,
