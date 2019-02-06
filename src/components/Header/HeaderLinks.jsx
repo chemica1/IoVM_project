@@ -119,7 +119,7 @@ class HeaderLinks extends React.Component {
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        3번 기기 고장
+                        3번 기기 응답지연
                       </MenuItem>
                       <MenuItem
                         onClick={this.handleClose}
@@ -131,7 +131,7 @@ class HeaderLinks extends React.Component {
                         onClick={this.handleClose}
                         className={classes.dropdownItem}
                       >
-                        .....
+                        US Entertainment notifications
                       </MenuItem>
                     </MenuList>
                   </ClickAwayListener>

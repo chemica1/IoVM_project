@@ -22,7 +22,7 @@ import logo from "assets/img/reactlogo.png";
 const switchRoutes = (
   <Switch>
     {dashboardRoutes.map((prop, key) => {
-      if (prop.redirect)
+      if (prop.redirect)   //이게 처음 들왔을때 화면이다.
         return <Redirect from={prop.path} to={prop.to} key={key} />;
       return <Route path={prop.path} component={prop.component} key={key} />;
     })}
@@ -69,16 +69,16 @@ class App extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>
-        <Sidebar
+       {/*} <Sidebar
           routes={dashboardRoutes}
-          logoText={"Io V.M."}
+          logoText={"US Entertainment"}
           logo={logo}
           image={image}
           handleDrawerToggle={this.handleDrawerToggle}
           open={this.state.mobileOpen}
           color="blue"
           {...rest}
-        />
+    />*/}
         <div className={classes.mainPanel} ref="mainPanel">
           <Header
             routes={dashboardRoutes}

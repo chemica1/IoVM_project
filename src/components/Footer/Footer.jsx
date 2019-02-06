@@ -40,7 +40,7 @@ function Footer({ ...props }) {
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
             <a href="https://..." className={classes.a}>
-              EntrusTech
+              US Entertainment
             </a>, IoT Vending Machine
           </span>
         </p>
