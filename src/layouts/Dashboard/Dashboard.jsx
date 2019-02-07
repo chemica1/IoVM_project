@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -18,14 +17,6 @@ import dashboardStyle from "assets/jss/material-dashboard-react/layouts/dashboar
 
 import image from "assets/img/sidebar-2.jpg";
 import logo from "assets/img/reactlogo.png";
-import StyledFirebaseAuth from "react-firebaseui/StyledFirebaseAuth";
-
-import firebase from "firebase/app";
-import "firebase/auth";
-
-import { DB_config } from "config/fbconfig.js";
-
-
 
 const switchRoutes = (
   <Switch>
@@ -38,12 +29,10 @@ const switchRoutes = (
 );
 
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      mobileOpen: false,
-      isSignedIn: false
+      mobileOpen: false
     };
     this.resizeFunction = this.resizeFunction.bind(this);
   }
@@ -79,7 +68,6 @@ class App extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>
-           
         <Sidebar
           routes={dashboardRoutes}
           logoText={"US Entertainment"}
