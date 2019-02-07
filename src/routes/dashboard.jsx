@@ -40,18 +40,19 @@ const dashboardRoutes = [
     component: Icons
   },
   {
-    path: "/maps",
-    sidebarName: "기기 위치",
-    navbarName: "기기 위치(구현중)",
-    icon: LocationOn,
-    component: Maps
-  },
-  {
     path: "/user",
     sidebarName: "관리자 정보",
     navbarName: "관리자 정보(구현중)",
     icon: Person,
     component: UserProfile
+  },
+  /*{
+  {
+    path: "/maps",
+    sidebarName: "기기 위치",
+    navbarName: "기기 위치(구현중)",
+    icon: LocationOn,
+    component: Maps
   },
   {
     path: "/notifications",
@@ -60,7 +61,7 @@ const dashboardRoutes = [
     icon: Notifications,
     component: NotificationsPage
   },
-  /*{
+  
     path: "/typography",
     sidebarName: "참조 도구1",
     navbarName: "참조 도구1",

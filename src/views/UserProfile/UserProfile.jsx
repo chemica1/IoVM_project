@@ -42,8 +42,8 @@ function UserProfile(props) {
         <GridItem xs={12} sm={12} md={8}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Edit Profile</h4>
-              <p className={classes.cardCategoryWhite}>Complete your profile</p>
+              <h4 className={classes.cardTitleWhite}>관리자 정보</h4>
+              <p className={classes.cardCategoryWhite}>Edit your profile</p>
             </CardHeader>
             <CardBody>
               <GridContainer>
@@ -131,7 +131,7 @@ function UserProfile(props) {
                 <GridItem xs={12} sm={12} md={12}>
                   <InputLabel style={{ color: "#AAAAAA" }}>About me</InputLabel>
                   <CustomInput
-                    labelText="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."
+                    labelText="....."
                     id="about-me"
                     formControlProps={{
                       fullWidth: true
@@ -145,7 +145,7 @@ function UserProfile(props) {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary">Update Profile</Button>
+              <Button color="primary">수정</Button>
             </CardFooter>
           </Card>
         </GridItem>
@@ -157,7 +157,7 @@ function UserProfile(props) {
               </a>
             </CardAvatar>
             <CardBody profile>
-              <h6 className={classes.cardCategory}>CEO</h6>
+              <h6 className={classes.cardCategory}>#417</h6>
               <h4 className={classes.cardTitle}>김 아무개</h4>
               <p className={classes.description}>
               ......
