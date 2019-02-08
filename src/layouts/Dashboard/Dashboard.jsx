@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import PropTypes from "prop-types";
 import { Switch, Route, Redirect } from "react-router-dom";
@@ -89,6 +90,8 @@ class App extends React.Component {
             <div className={classes.content}>
               <div className={classes.container}>{switchRoutes}</div>
             </div>
+          ) : (
+            <div className={classes.map}>{switchRoutes}</div>
           )}
           {this.getRoute() ? <Footer /> : null}
         </div>
